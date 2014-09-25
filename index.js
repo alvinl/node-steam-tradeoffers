@@ -250,7 +250,7 @@ SteamTradeOffers.prototype.acceptOffer = function(tradeofferid, steamId, callbac
       form: {
         sessionid: this.sessionID,
         tradeofferid: tradeofferid,
-        partner: steamId
+        partner: toAccountId(steamId)
       }
     }, function(error, response, body) {
       if (error || response.statusCode != 200) {
