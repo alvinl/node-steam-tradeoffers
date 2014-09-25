@@ -242,6 +242,9 @@ SteamTradeOffers.prototype.acceptOffer = function(tradeofferid, steamId, callbac
       callback(new Error('No options'));
     }
   } else {
+    console.log('sessionid', this.sessionID);
+    console.log('tradeofferid', tradeofferid);
+    console.log('partner', steamId, toAccountId(steamId));
     this._request.post({
       uri: 'https://steamcommunity.com/tradeoffer/' + tradeofferid + '/accept',
       headers: {
